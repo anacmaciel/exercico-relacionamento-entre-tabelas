@@ -15,7 +15,7 @@ public class CidadeModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String bairro;
+    private String Regiao;
     @ManyToOne
     @JoinColumn(name = "estado_id", referencedColumnName = "id")
     private EstadoModel estado;
