@@ -25,5 +25,11 @@ public class EstadoService {
     return estadoRepository.findById(id);
     }
 
+    public EstadoModel cadastrar(EstadoModel estadoModel) {
+        estadoModel.getId();
+        estadoModel.getNomeEstado();
+    return estadoRepository.save(estadoModel);
+    }
+
     
 }
