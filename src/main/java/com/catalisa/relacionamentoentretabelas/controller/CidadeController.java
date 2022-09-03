@@ -3,6 +3,8 @@ package com.catalisa.relacionamentoentretabelas.controller;
 import com.catalisa.relacionamentoentretabelas.model.CidadeModel;
 import com.catalisa.relacionamentoentretabelas.service.CidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,12 +18,20 @@ public class CidadeController {
     private CidadeService cidadeService;
 
     @GetMapping
-    public List<CidadeModel> buscarTodasAsCidades() {
-        return cidadeService.buscartodas();
+    public ResponseEntity<List<CidadeModel>> buscarTodasAsCidades() {
+        return ResponseEntity.ok(cidadeService.buscartodas());
     }
 
     @GetMapping(path = "/{id}")
-    public Optional<CidadeModel> buscarTodasAsCidadesPorId(@PathVariable Integer id) {
-        return cidadeService.buscarPorId(id);
+    public ResponseEntity<Optional<CidadeModel>> buscarTodasAsCidadesPorId(@PathVariable Integer id) {
+        return ResponseEntity.ok(cidadeService.buscarPorId(id);
     }
+
+@PostMapping
+    public ResponseEntity<CidadeModel> cadastrarCidade(@RequestBody CidadeModel cidadeModel) {
+        CidadeModel cidade = cidadeService.cadastrar();
+        return new ResponseEntity<>(cidade, HttpStatus.CREATED);
+    }
+
+
 }
