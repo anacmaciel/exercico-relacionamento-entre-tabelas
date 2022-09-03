@@ -20,5 +20,5 @@ public class EstadoModel implements Serializable {
     private String nomeEstado;
     @JsonIgnore
     @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL)
-    private List<EnderecoModel> enderecoModels;
+    private List<CidadeModel> cidades;
 }
