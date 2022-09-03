@@ -22,13 +22,13 @@ public class EstadoService {
     }
 
     public Optional<EstadoModel> buscarPorId(Integer id) {
-    return estadoRepository.findById(id);
+        return estadoRepository.findById(id);
     }
 
     public EstadoModel cadastrar(EstadoModel estadoModel) {
         estadoModel.getId();
         estadoModel.getNomeEstado();
-    return estadoRepository.save(estadoModel);
+        return estadoRepository.save(estadoModel);
     }
 
     public EstadoModel alterar(EstadoModel estadoModel) {
@@ -37,5 +37,7 @@ public class EstadoService {
         return estadoRepository.save(estadoModel);
     }
 
-
+    public void deletar(Integer id) {
+        estadoRepository.deleteById(id);
+    }
 }
