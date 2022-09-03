@@ -35,6 +35,8 @@ public class CidadeService {
         cidadeModel.getEstado();
         return cidadeRepository.save(cidadeModel);
     }
-    
 
+public void deletar(Integer id) {
+        cidadeRepository.deleteById(id);
+}
 }
