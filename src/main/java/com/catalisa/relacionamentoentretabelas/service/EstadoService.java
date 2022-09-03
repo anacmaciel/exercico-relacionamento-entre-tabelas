@@ -31,5 +31,11 @@ public class EstadoService {
     return estadoRepository.save(estadoModel);
     }
 
-    
+    public EstadoModel alterar(EstadoModel estadoModel) {
+        estadoModel.getId();
+        estadoModel.getNomeEstado();
+        return estadoRepository.save(estadoModel);
+    }
+
+
 }
