@@ -32,5 +32,10 @@ public class EstadoController {
         EstadoModel estado = estadoService.cadastrar(estadoModel);
         return new ResponseEntity<>(estado, HttpStatus.CREATED);
     }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<EstadoModel> alterarEstado(EstadoModel estadoModel) {
+        return ResponseEntity.ok(estadoService.alterar(estadoModel));
+    }
     
 }
