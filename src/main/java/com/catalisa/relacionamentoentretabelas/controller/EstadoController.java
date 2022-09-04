@@ -1,7 +1,6 @@
 package com.catalisa.relacionamentoentretabelas.controller;
 
 import com.catalisa.relacionamentoentretabelas.model.EstadoModel;
-import com.catalisa.relacionamentoentretabelas.service.CidadeService;
 import com.catalisa.relacionamentoentretabelas.service.EstadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
