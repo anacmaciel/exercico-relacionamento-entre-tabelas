@@ -24,19 +24,22 @@ public class CidadeController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Optional<CidadeModel>> buscarTodasAsCidadesPorId(@PathVariable Integer id) {
-        return ResponseEntity.ok(cidadeService.buscarPorId(id);
+        return ResponseEntity.ok(cidadeService.buscarPorId(id));
     }
 
-@PostMapping
+    @PostMapping
     public ResponseEntity<CidadeModel> cadastrarCidade(@RequestBody CidadeModel cidadeModel) {
         CidadeModel cidade = cidadeService.cadastrar();
         return new ResponseEntity<>(cidade, HttpStatus.CREATED);
     }
 
-@PutMapping(path = "/{id}")
+    @PutMapping(path = "/{id}")
     public ResponseEntity<CidadeModel> alterarCidade(CidadeModel cidadeModel) {
-        return ResponseEntity.ok(cidadeService.alterar());
+        return ResponseEntity.ok(cidadeService.alterar(cidadeModel));
     }
 
-    
+    @DeleteMapping(path = "/{id}")
+    public void deletarCidade(@PathVariable Integer id) {
+        cidadeService.deletar(id);
+    }
 }
