@@ -33,5 +33,10 @@ public class CidadeController {
         return new ResponseEntity<>(cidade, HttpStatus.CREATED);
     }
 
+@PutMapping(path = "/{id}")
+    public ResponseEntity<CidadeModel> alterarCidade(CidadeModel cidadeModel) {
+        return ResponseEntity.ok(cidadeService.alterar());
+    }
 
+    
 }
