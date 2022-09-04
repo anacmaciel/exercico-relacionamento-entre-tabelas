@@ -29,7 +29,7 @@ public class CidadeController {
 
     @PostMapping
     public ResponseEntity<CidadeModel> cadastrarCidade(@RequestBody CidadeModel cidadeModel) {
-        CidadeModel cidade = cidadeService.cadastrar();
+        CidadeModel cidade = cidadeService.cadastrar(cidadeModel);
         return new ResponseEntity<>(cidade, HttpStatus.CREATED);
     }
 
