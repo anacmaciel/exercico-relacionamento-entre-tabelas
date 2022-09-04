@@ -37,5 +37,9 @@ public class EstadoController {
     public ResponseEntity<EstadoModel> alterarEstado(EstadoModel estadoModel) {
         return ResponseEntity.ok(estadoService.alterar(estadoModel));
     }
-    
+
+    @DeleteMapping(path = "/{id}")
+    public void deletarEstado(@PathVariable Integer id) {
+        estadoService.deletar(id);
+    }
 }
