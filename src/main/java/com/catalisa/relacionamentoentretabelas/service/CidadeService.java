@@ -24,14 +24,14 @@ public class CidadeService {
 
     public CidadeModel cadastrar(CidadeModel cidadeModel) {
         cidadeModel.getId();
-        cidadeModel.getRegiao();
+        cidadeModel.getNomeCidade();
         cidadeModel.getEstado();
         return cidadeRepository.save(cidadeModel);
     }
 
     public CidadeModel alterar(CidadeModel cidadeModel) {
         cidadeModel.getId();
-        cidadeModel.getRegiao();
+        cidadeModel.getNomeCidade();
         cidadeModel.getEstado();
         return cidadeRepository.save(cidadeModel);
     }
