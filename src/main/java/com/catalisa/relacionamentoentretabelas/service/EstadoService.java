@@ -1,6 +1,7 @@
 package com.catalisa.relacionamentoentretabelas.service;
 
 import com.catalisa.relacionamentoentretabelas.model.EstadoModel;
+import com.catalisa.relacionamentoentretabelas.repository.BairroRepository;
 import com.catalisa.relacionamentoentretabelas.repository.CidadeRepository;
 import com.catalisa.relacionamentoentretabelas.repository.EstadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ public class EstadoService {
     private EstadoRepository estadoRepository;
     @Autowired
     private CidadeRepository cidadeRepository;
-
     public List<EstadoModel> buscarTodos() {
         return estadoRepository.findAll();
     }
