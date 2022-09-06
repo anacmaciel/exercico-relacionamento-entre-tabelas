@@ -1,14 +1,11 @@
 package com.catalisa.relacionamentoentretabelas.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
@@ -26,8 +23,6 @@ public class ItemPedidoModel implements Serializable {
     private PedidoModel pedido;
     @ManyToOne
     @JoinColumn(name = "produto_id", referencedColumnName = "id")
-    private CategoriaModel categoria;
-    @JsonIgnore
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
-    private List<ItemPedidoModel> pedidos = new ArrayList<>();
+    private ProdutoModel produto;
+
 }
